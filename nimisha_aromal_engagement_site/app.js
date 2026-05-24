@@ -4,7 +4,7 @@ const defaultConfig = {
   tagline: "Two Hearts, One Beautiful Beginning",
   dateDisplay: "5 July 2026",
   targetDateISO: "2026-07-05T10:30:00+05:30",
-  muhurtham: "04:30 PM to 05:30 PM",
+  timing: "04:00 PM to 08:00 PM",
   venue: "Idam Retreat, Malappuram, Kerala, India",
   mapLink: "https://maps.app.goo.gl/XEyS1gafL1X7t8Pw7",
   whatsappNumber: "96892203182",
