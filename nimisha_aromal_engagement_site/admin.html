@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Edit Panel | Nimisha & Aromal</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  body{background:#071d17}
+  .admin-wrap{max-width:980px;margin:auto;padding:40px 18px}
+  .admin-card{background:rgba(255,255,255,.08);border:1px solid rgba(216,180,106,.28);border-radius:28px;padding:24px}
+  .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .admin-form label{display:grid;gap:8px;color:#d8b46a;font-size:13px}
+  .admin-form input,.admin-form textarea{border:1px solid rgba(216,180,106,.26);background:rgba(255,255,255,.08);color:#fff8ea;border-radius:14px;padding:12px}
+  .admin-form textarea{min-height:100px}
+  .wide{grid-column:1/-1}
+  @media(max-width:760px){.admin-form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="admin-wrap">
+  <p class="section-kicker">Admin Panel</p>
+  <h1 style="font-size:54px;line-height:1">Edit Website Details</h1>
+  <div class="admin-card">
+    <form id="adminForm" class="admin-form"></form>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+      <button class="btn primary" id="saveBtn">Save Changes</button>
+      <button class="btn ghost" id="resetBtn">Reset</button>
+      <a class="btn ghost" href="index.html">Back to Website</a>
+    </div>
+    <p style="color:#cabf9f">This front-end admin panel saves changes in browser localStorage. For a real multi-device admin panel, connect it to Firebase, Supabase, Netlify CMS, or a small Node backend.</p>
+  </div>
+</div>
+<script>
+const fields = {
+  bride:"Bride Full Name", groom:"Groom Full Name", tagline:"Tagline",
+  dateDisplay:"Date Display", targetDateISO:"Countdown ISO Date",
+  muhurtham:"Muhurtham Timing", venue:"Venue", mapLink:"Google Maps Link", whatsappNumber:"WhatsApp Number with Country Code",
+  adminEmail:"Admin Email", brideFamily:"Bride Family", groomFamily:"Groom Family",
+  storyText:"Story Text", familyMessage:"Family Message"
+};
+const defaults = JSON.parse(localStorage.getItem("engagementConfig") || "null") || {
+  bride:"Nimisha Chungappally", groom:"Aromal Shaju", tagline:"Two Hearts, One Beautiful Beginning",
+  dateDisplay:"5 July 2026", targetDateISO:"2026-07-05T10:30:00+05:30",
+  muhurtham:"Muhurtham timing to be updated", venue:"Idam Retreat, Malappuram, Kerala, India",
+  mapLink:"https://maps.app.goo.gl/XEyS1gafL1X7t8Pw7", dressCode:"Ivory, Gold, Sage Green or Traditional Kerala Festive Wear",
+  whatsappNumber:"919999999999", adminEmail:"your-email@example.com",
+  brideFamily:"Chungappally Family", groomFamily:"Shaju Family",
+  storyText:"With blessings from both families, Nimisha and Aromal begin a beautiful new chapter together.",
+  familyMessage:"Together with their families, we invite you to join us for a day filled with love, blessings and celebration."
+};
+const form = document.getElementById("adminForm");
+Object.entries(fields).forEach(([key,label]) => {
+  const wrap = document.createElement("label");
+  if(["storyText","familyMessage"].includes(key)) wrap.className = "wide";
+  wrap.textContent = label;
+  const input = ["storyText","familyMessage"].includes(key) ? document.createElement("textarea") : document.createElement("input");
+  input.name = key; input.value = defaults[key] || "";
+  wrap.appendChild(input); form.appendChild(wrap);
+});
+document.getElementById("saveBtn").onclick = e => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  localStorage.setItem("engagementConfig", JSON.stringify(data));
+  alert("Saved. Open the website to view changes.");
+};
+document.getElementById("resetBtn").onclick = e => {
+  e.preventDefault();
+  localStorage.removeItem("engagementConfig");
+  location.reload();
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "Nimisha & Aromal Engagement Invitation",
+  "short_name": "N&A Engagement",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#09291f",
+  "theme_color": "#09291f",
+  "icons": [
+    { "src": "assets/couple.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}
