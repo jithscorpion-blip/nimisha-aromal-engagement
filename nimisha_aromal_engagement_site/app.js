@@ -27,7 +27,7 @@ function applyConfig(){
   setText("tagline", cfg.tagline);
   setText("dateDisplay", cfg.dateDisplay);
   setText("eventDate", cfg.dateDisplay);
-  setText("muhurtham", cfg.muhurtham);
+  setText("muhurtham", cfg.timing);
   setText("venue", cfg.venue);
   setText("brideFamily", cfg.brideFamily);
   setText("groomFamily", cfg.groomFamily);
