@@ -5,12 +5,12 @@ const defaultConfig = {
   dateDisplay: "5 July 2026",
   targetDateISO: "2026-07-05T10:30:00+05:30",
   timing: "04:00 PM to 08:00 PM",
-  venue: "Idam Retreat, Malappuram, Kerala, India",
+  venue: "Idam Retreat, Manjeri, Kerala, India",
   mapLink: "https://maps.app.goo.gl/XEyS1gafL1X7t8Pw7",
   whatsappNumber: "96892203182",
   adminEmail: "jithscorpion@gmail.com",
   brideFamily: "Chungappally Family",
-  groomFamily: "Shaju Family",
+  groomFamily: "Manjappillil Family",
   storyText: "With blessings from both families, Nimisha and Aromal begin a beautiful new chapter together.",
   familyMessage: "Together with their families, we invite you to join us for a day filled with love, blessings and celebration."
 };
