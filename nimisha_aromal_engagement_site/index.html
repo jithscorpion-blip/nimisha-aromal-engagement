@@ -1,267 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#200609">
+<title>Nimisha &amp; Aromal | Engagement Invitation</title>
+<meta name="description" content="Nimisha & Aromal Engagement Ceremony — 5 July 2026 at Idam Retreat, Malappuram.">
+<meta property="og:title" content="Nimisha & Aromal | Engagement Invitation">
+<meta property="og:description" content="Two Hearts, One Beautiful Beginning — 5 July 2026, Idam Retreat, Malappuram.">
+<meta property="og:image" content="assets/couple.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Marcellus&family=Noto+Serif+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#200609;
+  --pine:#3A0C13;
+  --pine-soft:#4C101A;
+  --candle:#D9A843;
+  --glow:#F3DA92;
+  --rose:#9E1B2E;
+  --rose-deep:#5E0F1C;
+  --blush:#F2C7C0;
+  --ivory:#F5EEE1;
+  --ivory-dim:rgba(245,238,225,.62);
+  --copper:#C89B4C;
+  --copper-light:#E6C478;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--night);
+  color:var(--ivory);
+  font-family:'Cormorant Garamond','Noto Serif Malayalam',serif;
+  font-size:19px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+.ml body, body.ml{font-family:'Noto Serif Malayalam','Cormorant Garamond',serif}
+::selection{background:var(--rose);color:var(--ivory)}
+a{color:var(--glow)}
+img{max-width:100%;display:block}
 
-  <meta name="description" content="Nimisha & Aromal Engagement Ceremony Invitation - 5 July 2026 at Idam Retreat, Malappuram." />
-  <meta name="theme-color" content="#09291f" />
+.caps{
+  font-family:'Marcellus',serif;
+  text-transform:uppercase;
+  letter-spacing:.32em;
+  font-size:.68rem;
+  color:var(--candle);
+}
+.script{font-family:'Pinyon Script',cursive;font-weight:400}
 
-  <meta property="og:title" content="Nimisha & Aromal | Engagement Invitation" />
-  <meta property="og:description" content="Two Hearts, One Beautiful Beginning. Join us on 5 July 2026 at Idam Retreat, Malappuram." />
-  <meta property="og:image" content="assets/marked-photo.jpg" />
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 22px;
+  background:linear-gradient(180deg,rgba(32,6,9,.92),rgba(32,6,9,0));
+}
+.mono{font-family:'Marcellus',serif;letter-spacing:.25em;font-size:.85rem;color:var(--blush)}
+.topbar .controls{display:flex;gap:10px}
+.chip{
+  font-family:'Marcellus',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ivory);background:rgba(245,238,225,.06);
+  border:1px solid rgba(217,168,67,.35);border-radius:999px;
+  padding:7px 14px;cursor:pointer;transition:.25s;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--candle);color:var(--candle);outline:none}
 
-  <title>Nimisha & Aromal | Engagement Invitation</title>
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:110px 18px 70px;
+  background:
+    radial-gradient(1100px 700px at 50% 108%, rgba(217,168,67,.16), transparent 62%),
+    radial-gradient(800px 500px at 12% -6%, rgba(76,16,26,.85), transparent 60%),
+    radial-gradient(800px 500px at 92% 0%, rgba(76,16,26,.7), transparent 55%),
+    var(--night);
+}
+/* fairy lights */
+.fairy{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.fairy i{
+  position:absolute;width:3px;height:3px;border-radius:50%;
+  background:var(--glow);
+  box-shadow:0 0 8px 2px rgba(243,218,146,.55);
+  opacity:.55;
+  animation:twinkle 4.2s ease-in-out infinite;
+}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:.8}}
+/* leaf silhouettes */
+.leaves{position:absolute;pointer-events:none;opacity:.5}
+.leaves.tl{top:-30px;left:-40px;transform:rotate(12deg)}
+.leaves.br{bottom:-40px;right:-46px;transform:rotate(195deg)}
 
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="styles.css" />
+/* the acrylic sign */
+.sign-wrap{position:relative;z-index:2;width:min(430px,92vw)}
+.sign-frame{
+  position:relative;
+  border:3px solid var(--copper);
+  outline:1px solid rgba(230,196,120,.35);
+  outline-offset:5px;
+  border-radius:2px;
+  padding:58px 30px 66px;
+  background:
+    linear-gradient(160deg, rgba(245,238,225,.10), rgba(245,238,225,.03) 38%, rgba(217,168,67,.10) 78%, rgba(158,27,46,.08)),
+    rgba(32,6,9,.35);
+  backdrop-filter:blur(2px);
+  box-shadow:
+    0 0 0 1px rgba(200,155,76,.25),
+    0 30px 70px rgba(0,0,0,.55),
+    inset 0 0 60px rgba(243,218,146,.10);
+  text-align:center;
+}
+.sign-frame::after{ /* acrylic sheen */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg, transparent 30%, rgba(245,238,225,.10) 44%, transparent 58%);
+}
+.sign-welcome{font-size:clamp(3rem,10vw,4.2rem);color:var(--blush);line-height:1;text-shadow:0 0 26px rgba(242,199,192,.35)}
+.sign-sub{margin-top:10px;color:var(--ivory-dim);font-family:'Marcellus',serif;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase}
+.sign-names{margin-top:34px;font-size:clamp(2.6rem,9vw,3.6rem);color:var(--ivory);line-height:1.15;text-shadow:0 0 30px rgba(243,218,146,.25)}
+.sign-amp{display:block;font-size:1.8rem;color:var(--candle);margin:2px 0}
+.sign-date{margin-top:32px;font-family:'Marcellus',serif;letter-spacing:.45em;font-size:.82rem;color:var(--glow)}
+/* rose clusters */
+.roses{position:absolute;width:150px;height:150px;pointer-events:none;filter:drop-shadow(0 8px 16px rgba(0,0,0,.5))}
+.roses.tr{top:-58px;right:-44px}
+.roses.ml{left:-56px;top:34%;transform:rotate(-14deg)}
+/* candles under the sign */
+.candles{
+  position:relative;z-index:2;
+  display:flex;align-items:flex-end;justify-content:center;gap:14px;
+  margin-top:-26px;
+}
+.candle{position:relative;width:26px;border-radius:4px 4px 6px 6px;
+  background:linear-gradient(180deg,rgba(245,238,225,.28),rgba(245,238,225,.10));
+  border:1px solid rgba(245,238,225,.25);
+  box-shadow:inset 0 -14px 20px rgba(217,168,67,.28);
+}
+.candle::before{ /* flame */
+  content:"";position:absolute;left:50%;top:-13px;transform:translateX(-50%);
+  width:8px;height:13px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
+  background:radial-gradient(circle at 50% 68%, #fff 0%, var(--glow) 38%, var(--candle) 68%, transparent 100%);
+  animation:flick 1.6s ease-in-out infinite;
+}
+.candle::after{ /* halo */
+  content:"";position:absolute;left:50%;top:-30px;transform:translateX(-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:radial-gradient(circle, rgba(243,218,146,.38), transparent 70%);
+  animation:flick 1.6s ease-in-out infinite;
+}
+.candle:nth-child(2n)::before,.candle:nth-child(2n)::after{animation-delay:.5s;animation-duration:1.9s}
+.candle:nth-child(3n)::before,.candle:nth-child(3n)::after{animation-delay:.9s;animation-duration:1.4s}
+@keyframes flick{0%,100%{opacity:.85;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.12) translateY(-1px)}}
+.hero .scrollcue{margin-top:64px;z-index:2;color:var(--ivory-dim);font-family:'Marcellus',serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none}
+
+/* ---------- sections ---------- */
+section{padding:96px 22px;position:relative}
+.inner{max-width:960px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head .script{font-size:clamp(2.4rem,6vw,3.2rem);color:var(--blush)}
+.divider{width:120px;height:14px;margin:14px auto 0;opacity:.9}
+
+/* countdown */
+.countdown{background:linear-gradient(180deg,var(--night),var(--pine) 120%)}
+.cd-grid{display:flex;justify-content:center;gap:clamp(10px,4vw,34px);flex-wrap:wrap}
+.cd-cell{
+  min-width:108px;padding:26px 10px 20px;text-align:center;
+  border:1px solid rgba(217,168,67,.28);border-radius:2px;
+  background:rgba(245,238,225,.03);
+  box-shadow:inset 0 0 40px rgba(217,168,67,.05);
+}
+.cd-cell b{display:block;font-family:'Marcellus',serif;font-size:2.4rem;color:var(--glow);font-weight:400;line-height:1}
+.cd-cell span{display:block;margin-top:10px;font-family:'Marcellus',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ivory-dim)}
+
+/* invitation + photo */
+.invite .inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.photo-frame{
+  position:relative;border:3px solid var(--copper);outline:1px solid rgba(230,196,120,.3);outline-offset:6px;
+  box-shadow:0 26px 60px rgba(0,0,0,.55);
+}
+.photo-frame img{filter:sepia(.12) contrast(1.02)}
+.photo-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(200deg,transparent 55%,rgba(217,168,67,.18));pointer-events:none}
+.invite-copy .script{font-size:clamp(2.2rem,5vw,2.9rem);color:var(--blush);line-height:1.2}
+.invite-copy p{margin-top:22px;color:var(--ivory-dim);font-size:1.08rem;max-width:44ch}
+.fam{display:flex;gap:40px;margin-top:36px}
+.fam div b{display:block;font-family:'Marcellus',serif;font-size:.95rem;letter-spacing:.08em;color:var(--ivory);font-weight:400;margin-top:6px}
+
+/* event details */
+.details{background:linear-gradient(180deg,var(--night) 0%,#2E0A10 60%,var(--night))}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  text-align:center;padding:40px 22px 34px;
+  border:1px solid rgba(217,168,67,.25);border-radius:2px;
+  background:rgba(245,238,225,.03);
+}
+.card .caps{display:block;margin-bottom:14px}
+.card b{font-family:'Marcellus',serif;font-weight:400;font-size:1.25rem;color:var(--ivory);line-height:1.4}
+.card small{display:block;margin-top:8px;color:var(--ivory-dim);font-size:.95rem}
+.btn{
+  display:inline-block;margin-top:16px;text-decoration:none;
+  font-family:'Marcellus',serif;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--night);background:linear-gradient(180deg,var(--glow),var(--candle));
+  padding:13px 26px;border-radius:2px;border:0;cursor:pointer;transition:.25s;
+}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:none;color:var(--candle);border:1px solid rgba(217,168,67,.5)}
+
+/* venue */
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.venue-grid img{border:1px solid rgba(200,155,76,.4);aspect-ratio:4/3;object-fit:cover;width:100%}
+
+/* rsvp */
+.rsvp .panel{
+  max-width:560px;margin:0 auto;padding:52px 36px;
+  border:3px solid var(--copper);outline:1px solid rgba(230,196,120,.3);outline-offset:5px;
+  background:linear-gradient(165deg,rgba(245,238,225,.06),rgba(158,27,46,.06));
+  text-align:center;
+}
+.rsvp label{display:block;text-align:left;margin:22px 0 8px}
+.rsvp input,.rsvp select{
+  width:100%;padding:14px 16px;font-family:inherit;font-size:1rem;
+  background:rgba(32,6,9,.6);color:var(--ivory);
+  border:1px solid rgba(217,168,67,.35);border-radius:2px;
+}
+.rsvp input:focus,.rsvp select:focus{outline:1px solid var(--candle)}
+.rsvp .btn{width:100%;margin-top:30px;padding:16px}
+
+footer{
+  text-align:center;padding:70px 20px 50px;
+  color:var(--ivory-dim);
+  background:radial-gradient(700px 320px at 50% 120%, rgba(217,168,67,.14), transparent 70%),var(--night);
+}
+footer .script{font-size:2rem;color:var(--blush)}
+footer p{margin-top:10px;font-family:'Marcellus',serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase}
+
+/* entrance animations */
+@keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.sign-wrap{animation:riseIn 1.1s cubic-bezier(.22,1,.36,1) .15s both}
+.candles{animation:riseIn 1.1s cubic-bezier(.22,1,.36,1) .45s both}
+.hero .scrollcue{animation:riseIn 1s ease .8s both}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+/* countdown digit change */
+.cd-cell b{transition:transform .18s ease}
+.cd-cell b.tick{transform:translateY(-4px) scale(1.08);color:var(--ivory)}
+/* card hover */
+.card{transition:border-color .3s,box-shadow .3s,transform .3s}
+.card:hover{border-color:rgba(217,168,67,.55);box-shadow:0 12px 34px rgba(0,0,0,.4),inset 0 0 40px rgba(217,168,67,.08);transform:translateY(-3px)}
+/* focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--candle);outline-offset:3px}
+.photo-frame img{aspect-ratio:1377/1836;object-fit:cover;width:100%}
+
+@media (max-width:820px){
+  .invite .inner{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr}
+  .venue-grid{grid-template-columns:1fr}
+  .roses.tr{top:-52px;right:-24px;width:118px;height:118px}
+  .roses.ml{left:-34px;width:110px;height:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
-
 <body>
-  <div id="loader">
-    <div class="lamp"></div>
-    <p>Opening Invitation</p>
+
+<header class="topbar">
+  <div class="mono">N&nbsp;&nbsp;∞&nbsp;&nbsp;A</div>
+  <div class="controls">
+    <button class="chip" id="langBtn" aria-label="Switch language">മലയാളം</button>
+    <button class="chip" id="musicBtn" aria-label="Play music">♪ Music</button>
+  </div>
+</header>
+
+<!-- ================= HERO : the acrylic welcome sign ================= -->
+<div class="hero" id="invitation">
+  <div class="fairy" id="fairy" aria-hidden="true"></div>
+
+  <svg class="leaves tl" width="360" height="300" viewBox="0 0 360 300" aria-hidden="true">
+    <g fill="none" stroke="#4C101A" stroke-width="3" opacity=".9">
+      <path d="M20 10 C 120 60, 180 140, 200 260" />
+      <path d="M20 10 C 80 30, 130 40, 200 30" />
+      <path d="M60 40 C 60 100, 40 160, 20 220" />
+    </g>
+    <g fill="#3A0C13">
+      <ellipse cx="120" cy="80" rx="70" ry="24" transform="rotate(32 120 80)"/>
+      <ellipse cx="200" cy="150" rx="82" ry="26" transform="rotate(48 200 150)"/>
+      <ellipse cx="70" cy="170" rx="64" ry="20" transform="rotate(78 70 170)"/>
+    </g>
+  </svg>
+  <svg class="leaves br" width="360" height="300" viewBox="0 0 360 300" aria-hidden="true">
+    <g fill="#3A0C13">
+      <ellipse cx="120" cy="80" rx="70" ry="24" transform="rotate(32 120 80)"/>
+      <ellipse cx="200" cy="150" rx="82" ry="26" transform="rotate(48 200 150)"/>
+      <ellipse cx="70" cy="170" rx="64" ry="20" transform="rotate(78 70 170)"/>
+    </g>
+  </svg>
+
+  <div class="sign-wrap">
+    <!-- rose cluster top-right -->
+    <svg class="roses tr" viewBox="0 0 150 150" aria-hidden="true">
+      <g>
+        <ellipse cx="52" cy="96" rx="34" ry="13" fill="#3A0C13" transform="rotate(-28 52 96)"/>
+        <ellipse cx="110" cy="44" rx="30" ry="11" fill="#4C101A" transform="rotate(24 110 44)"/>
+        <circle cx="76" cy="58" r="26" fill="#5E0F1C"/><circle cx="76" cy="58" r="18" fill="#9E1B2E"/><circle cx="76" cy="58" r="10" fill="#7A1424"/><circle cx="76" cy="58" r="4.5" fill="#B22439"/>
+        <circle cx="112" cy="82" r="21" fill="#5E0F1C"/><circle cx="112" cy="82" r="14" fill="#9E1B2E"/><circle cx="112" cy="82" r="7" fill="#7A1424"/>
+        <circle cx="44" cy="46" r="18" fill="#5E0F1C"/><circle cx="44" cy="46" r="12" fill="#9E1B2E"/><circle cx="44" cy="46" r="6" fill="#B22439"/>
+        <circle cx="52" cy="92" r="15" fill="#7A1424"/><circle cx="52" cy="92" r="9" fill="#9E1B2E"/>
+        <circle cx="98" cy="118" r="13" fill="#5E0F1C"/><circle cx="98" cy="118" r="8" fill="#9E1B2E"/>
+      </g>
+    </svg>
+    <!-- rose cluster mid-left -->
+    <svg class="roses ml" viewBox="0 0 150 150" aria-hidden="true">
+      <g>
+        <ellipse cx="96" cy="110" rx="34" ry="12" fill="#3A0C13" transform="rotate(36 96 110)"/>
+        <ellipse cx="40" cy="52" rx="30" ry="11" fill="#4C101A" transform="rotate(-30 40 52)"/>
+        <circle cx="70" cy="72" r="25" fill="#5E0F1C"/><circle cx="70" cy="72" r="17" fill="#9E1B2E"/><circle cx="70" cy="72" r="9" fill="#7A1424"/><circle cx="70" cy="72" r="4" fill="#B22439"/>
+        <circle cx="36" cy="96" r="19" fill="#5E0F1C"/><circle cx="36" cy="96" r="13" fill="#9E1B2E"/><circle cx="36" cy="96" r="6" fill="#7A1424"/>
+        <circle cx="102" cy="48" r="17" fill="#5E0F1C"/><circle cx="102" cy="48" r="11" fill="#9E1B2E"/><circle cx="102" cy="48" r="5" fill="#B22439"/>
+        <circle cx="108" cy="92" r="12" fill="#7A1424"/><circle cx="108" cy="92" r="7" fill="#9E1B2E"/>
+      </g>
+    </svg>
+
+    <div class="sign-frame">
+      <div class="sign-welcome script" data-i18n="welcome">Welcome</div>
+      <div class="sign-sub" data-i18n="toour">To our engagement</div>
+      <div class="sign-names script">Nimisha<span class="sign-amp">&amp;</span>Aromal</div>
+      <div class="sign-date">05 · 07 · 2026</div>
+    </div>
   </div>
 
-  <audio id="bgMusic" src="assets/music.mp3" loop preload="none"></audio>
+  <div class="candles" aria-hidden="true">
+    <div class="candle" style="height:46px"></div>
+    <div class="candle" style="height:70px"></div>
+    <div class="candle" style="height:38px"></div>
+    <div class="candle" style="height:88px"></div>
+    <div class="candle" style="height:56px"></div>
+    <div class="candle" style="height:74px"></div>
+    <div class="candle" style="height:42px"></div>
+  </div>
 
-  <button class="music-toggle" id="musicToggle" aria-label="Toggle background music">♪</button>
-  <a class="whatsapp-float" id="floatWhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="scrollcue" href="#countdown" data-i18n="scroll">Scroll — the details await</a>
+</div>
 
-  <header class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="gold-noise"></div>
+<!-- ================= COUNTDOWN ================= -->
+<section class="countdown" id="countdown">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="caps" data-i18n="counting">Counting down to forever</span>
+      <div class="script" data-i18n="cdtitle">Until the Muhurtham</div>
+    </div>
+    <div class="cd-grid" id="cd">
+      <div class="cd-cell"><b id="d">--</b><span data-i18n="days">Days</span></div>
+      <div class="cd-cell"><b id="h">--</b><span data-i18n="hours">Hours</span></div>
+      <div class="cd-cell"><b id="m">--</b><span data-i18n="mins">Minutes</span></div>
+      <div class="cd-cell"><b id="s">--</b><span data-i18n="secs">Seconds</span></div>
+    </div>
+  </div>
+</section>
 
-    <nav class="nav">
-      <div class="brand">N ∞ A</div>
-      <div class="nav-actions">
-        <button id="langToggle">മലയാളം</button>
-        <a href="#rsvp">RSVP</a>
-      </div>
-    </nav>
-
-    <div class="hero-content reveal">
-      <p class="eyebrow" data-en="Together with their families" data-ml="കുടുംബങ്ങളുടെ അനുഗ്രഹത്തോടെ">
-        Together with their families
-      </p>
-
-      <h1>
-        <span id="brideName">Nimisha</span>
-        <small>&</small>
-        <span id="groomName">Aromal</span>
-      </h1>
-
-      <p class="tagline" id="tagline">Two Hearts, One Beautiful Beginning</p>
-
-      <div class="save-date">
-        <span data-en="Save the Date" data-ml="തീയതി ഓർക്കുക">Save the Date</span>
-        <strong id="dateDisplay">5 July 2026</strong>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="#invitation" class="btn primary" data-en="Open Invitation" data-ml="ക്ഷണം തുറക്കുക">Open Invitation</a>
-        <a href="#event" class="btn ghost" data-en="View Details" data-ml="വിശദാംശങ്ങൾ">View Details</a>
+<!-- ================= INVITATION + PHOTO ================= -->
+<section class="invite">
+  <div class="inner">
+    <div class="photo-frame">
+      <img src="assets/marked-photo.jpg" width="1377" height="1836" alt="Nimisha and Aromal — hands together" loading="lazy">
+    </div>
+    <div class="invite-copy">
+      <span class="caps" data-i18n="journey">Our journey begins</span>
+      <h2 class="script" data-i18n="twohearts">Two hearts, one beautiful beginning</h2>
+      <p data-i18n="inviteline">Together with their families, Nimisha and Aromal invite you to an evening of blessings, tradition and celebration as they begin a beautiful new chapter.</p>
+      <div class="fam">
+        <div><span class="caps" data-i18n="bride">Bride's family</span><b>Chungappally Family</b></div>
+        <div><span class="caps" data-i18n="groom">Groom's family</span><b>Manjappillil Family</b></div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section class="countdown section reveal">
-      <p class="section-kicker" data-en="Counting down to forever" data-ml="മംഗള നിമിഷത്തിനായി കാത്തിരിപ്പ്">
-        Counting down to forever
-      </p>
-
-      <h2 data-en="Engagement Countdown" data-ml="നിശ്ചയ സമയത്തിലേക്ക്">Engagement Countdown</h2>
-
-      <div class="timer" id="timer">
-        <div><strong id="days">00</strong><span>Days</span></div>
-        <div><strong id="hours">00</strong><span>Hours</span></div>
-        <div><strong id="minutes">00</strong><span>Minutes</span></div>
-        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+<!-- ================= EVENT DETAILS ================= -->
+<section class="details" id="event">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="caps" data-i18n="eventdet">Event details</span>
+      <div class="script" data-i18n="ceremony">Engagement Ceremony</div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="caps" data-i18n="date">Date</span>
+        <b>5 July 2026</b>
+        <small data-i18n="sunday">Sunday</small>
       </div>
-    </section>
-
-    <section class="story section reveal" id="story">
-      <div class="split">
-        <div>
-          <p class="section-kicker" data-en="Our Journey Begins" data-ml="ഞങ്ങളുടെ യാത്ര തുടങ്ങുന്നു">
-            Our Journey Begins
-          </p>
-
-          <h2 data-en="A new chapter, blessed by family and love" data-ml="സ്നേഹത്തോടും അനുഗ്രഹത്തോടും കൂടിയൊരു പുതിയ തുടക്കം">
-            A new chapter, blessed by family and love
-          </h2>
-
-          <p id="storyText">
-            With blessings from both families, Nimisha and Aromal begin a beautiful new chapter together.
-          </p>
-
-          <div class="timeline">
-            <div>
-              <b data-en="Blessings" data-ml="അനുഗ്രഹം">Blessings</b>
-              <span data-en="Family, tradition and togetherness" data-ml="കുടുംബം, പാരമ്പര്യം, ഐക്യം">
-                Family, tradition and togetherness
-              </span>
-            </div>
-
-            <div>
-              <b data-en="Promise" data-ml="വാഗ്ദാനം">Promise</b>
-              <span data-en="A beautiful beginning" data-ml="മനോഹരമായ തുടക്കം">
-                A beautiful beginning
-              </span>
-            </div>
-
-            <div>
-              <b data-en="Celebration" data-ml="ആഘോഷം">Celebration</b>
-              <span data-en="At Idam Retreat, Malappuram" data-ml="ഇടം റിട്രീറ്റ്, മലപ്പുറം">
-                At Idam Retreat, Malappuram
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="portrait-card">
-          <img src="assets/marked-photo.jpg" alt="Nimisha and Aromal engagement moment" />
-        </div>
+      <div class="card">
+        <span class="caps" data-i18n="muhurtham">Muhurtham</span>
+        <b id="muhurthamText">4:30 – 5:30 PM</b>
+        <small data-i18n="arrive">Function: 4:00 PM – 8:00 PM</small>
       </div>
-    </section>
-
-    <section class="event section reveal" id="event">
-      <p class="section-kicker" data-en="Event Details" data-ml="ചടങ്ങിന്റെ വിവരങ്ങൾ">Event Details</p>
-      <h2 data-en="Engagement Ceremony" data-ml="നിശ്ചയ ചടങ്ങ്">Engagement Ceremony</h2>
-
-      <div class="details-grid">
-        <article>
-          <span>Date</span>
-          <strong id="eventDate">5 July 2026</strong>
-        </article>
-
-        <article>
-          <span>Muhurtham</span>
-          <strong id="muhurtham">To be updated</strong>
-        </article>
-
-        <article>
-          <span>Venue</span>
-          <strong id="venue">Idam Retreat, Malappuram</strong>
-        </article>
+      <div class="card">
+        <span class="caps" data-i18n="venue">Venue</span>
+        <b>Idam Retreat</b>
+        <small>Malappuram, Kerala</small>
+        <a class="btn ghost" href="https://maps.app.goo.gl/XEyS1gafL1X7t8Pw7" target="_blank" rel="noopener" data-i18n="maps">Open Google Maps</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="event-actions">
-        <a id="mapLink" class="btn primary" href="https://maps.app.goo.gl/XEyS1gafL1X7t8Pw7" target="_blank" rel="noopener">
-          Open Google Maps
-        </a>
-        <button class="btn ghost" id="weatherBtn">Weather Preview</button>
-      </div>
+<!-- ================= VENUE ================= -->
+<section>
+  <div class="inner">
+    <div class="sec-head">
+      <span class="caps" data-i18n="venueshow">Venue showcase</span>
+      <div class="script" data-i18n="venuetitle">A warm Kerala retreat</div>
+    </div>
+    <div class="venue-grid">
+      <img src="assets/venue1.jpg" alt="Idam Retreat pathway" loading="lazy" onerror="this.parentElement.removeChild(this)">
+      <img src="assets/venue2.jpg" alt="Idam Retreat entrance" loading="lazy" onerror="this.parentElement.removeChild(this)">
+    </div>
+  </div>
+</section>
 
-      <p class="weather-note" id="weatherNote">
-        Weather preview can be connected to OpenWeather API by adding your API key in app.js.
-      </p>
-    </section>
+<!-- ================= RSVP ================= -->
+<section class="rsvp" id="rsvp">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="caps">RSVP</span>
+      <div class="script" data-i18n="confirm">Confirm your presence</div>
+    </div>
+    <div class="panel">
+      <label class="caps" for="gname" data-i18n="yourname">Your name</label>
+      <input id="gname" type="text" autocomplete="name" placeholder="">
+      <label class="caps" for="gcount" data-i18n="attendees">Number of attendees</label>
+      <select id="gcount"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+      <label class="caps" for="gmeal" data-i18n="meal">Meal preference</label>
+      <select id="gmeal"><option data-i18n-opt="veg">Vegetarian</option><option data-i18n-opt="nonveg">Non-Vegetarian</option></select>
+      <button class="btn" id="waBtn" data-i18n="sendwa">Send RSVP on WhatsApp</button>
+    </div>
+  </div>
+</section>
 
-    <section class="venue section reveal" id="venue-gallery">
-      <p class="section-kicker" data-en="Venue Showcase" data-ml="വേദിയുടെ സൗന്ദര്യം">Venue Showcase</p>
-      <h2 data-en="A warm Kerala retreat for a beautiful evening" data-ml="മനോഹരമായ സായാഹ്നത്തിനായി ഒരു കേരള റിട്രീറ്റ്">
-        A warm Kerala retreat for a beautiful evening
-      </h2>
+<footer>
+  <div class="script">Nimisha &amp; Aromal</div>
+  <p>5 July 2026 · Muhurtham 4:30 PM · Idam Retreat · Malappuram</p>
+  <p style="margin-top:16px;letter-spacing:.2em">Chungappally Family &nbsp;·&nbsp; Manjappillil Family</p>
+  <p style="margin-top:22px;opacity:.65" data-i18n="blessing">With love and blessings, we await you</p>
+</footer>
 
-      <div class="venue-gallery">
-        <img src="assets/venue1.jpg" alt="Idam Retreat pathway" />
-        <img src="assets/venue2.jpg" alt="Idam Retreat entrance" />
-      </div>
-    </section>
+<audio id="bgm" src="assets/music.mp3" loop preload="none"></audio>
 
-    <section class="invitation section reveal" id="invitation">
-      <p class="section-kicker" data-en="Digital Invitation Card" data-ml="ഡിജിറ്റൽ ക്ഷണക്കത്ത്">
-        Digital Invitation Card
-      </p>
+<script>
+/* ================= EDIT IF NEEDED ================= */
+const MUHURTHAM = "2026-07-05T16:30:00+05:30";   // muhurtham start 4:30 PM IST (countdown target)
+const WHATSAPP_NUMBER = "918590551268";          // RSVP number: country code + number, digits only
+/* ================================================== */
 
-      <div class="invite-card" id="inviteCard">
-        <div class="invite-flap"></div>
+/* KILL old service worker + caches so returning guests get the new site */
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});
+  if(window.caches) caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{});
+}
 
-        <div class="invite-inner">
-          <p>Engagement Ceremony</p>
-          <h2>Nimisha<br><span>&</span><br>Aromal</h2>
-          <strong>5 July 2026</strong>
-          <em>Idam Retreat, Malappuram</em>
-          <button class="btn primary" id="downloadPdf">Download / Print PDF</button>
-        </div>
-      </div>
-    </section>
+/* scroll reveal */
+document.querySelectorAll("section .inner").forEach(el=>el.classList.add("reveal"));
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
-    <section class="family section reveal" id="family">
-      <p class="section-kicker" data-en="With Blessings From" data-ml="അനുഗ്രഹത്തോടെ">
-        With Blessings From
-      </p>
+/* countdown */
+const target = new Date(MUHURTHAM).getTime();
+function tick(){
+  let diff = Math.max(0, target - Date.now());
+  const d = Math.floor(diff/864e5); diff -= d*864e5;
+  const h = Math.floor(diff/36e5);  diff -= h*36e5;
+  const m = Math.floor(diff/6e4);   diff -= m*6e4;
+  const s = Math.floor(diff/1e3);
+  const pad = n => String(n).padStart(2,"0");
+  const set = (id,val)=>{
+    const el = document.getElementById(id);
+    if(el.textContent !== val){
+      el.textContent = val;
+      el.classList.add("tick");
+      setTimeout(()=>el.classList.remove("tick"),180);
+    }
+  };
+  set("d",pad(d)); set("h",pad(h)); set("m",pad(m)); set("s",pad(s));
+}
+tick(); setInterval(tick, 1000);
 
-      <div class="family-grid">
-        <article>
-          <h3>Bride Family</h3>
-          <p id="brideFamily">Chungappally Family</p>
-        </article>
+/* muhurtham shown as static range 4:30 – 5:30 PM in the card */
 
-        <article>
-          <h3>Groom Family</h3>
-          <p id="groomFamily">Manjappillil Family</p>
-        </article>
-      </div>
+/* fairy lights */
+const fairy = document.getElementById("fairy");
+for(let i=0;i<26;i++){
+  const dot = document.createElement("i");
+  dot.style.left = Math.random()*100+"%";
+  dot.style.top = Math.random()*100+"%";
+  dot.style.animationDelay = (Math.random()*4)+"s";
+  fairy.appendChild(dot);
+}
 
-      <p class="family-message" id="familyMessage">
-        Together with their families, we invite you to join us for a day filled with love, blessings and celebration.
-      </p>
-    </section>
+/* music */
+const bgm = document.getElementById("bgm");
+document.getElementById("musicBtn").addEventListener("click", function(){
+  if(bgm.paused){ bgm.play().catch(()=>{}); this.textContent = "❚❚ Music"; }
+  else { bgm.pause(); this.textContent = "♪ Music"; }
+});
 
-    <section class="gallery section reveal" id="gallery">
-      <p class="section-kicker" data-en="Gallery" data-ml="ഗാലറി">Gallery</p>
-      <h2 data-en="A beautiful beginning" data-ml="മനോഹരമായ തുടക്കം">A beautiful beginning</h2>
+/* WhatsApp RSVP with validation */
+document.getElementById("waBtn").addEventListener("click", () => {
+  const nameEl = document.getElementById("gname");
+  const name = nameEl.value.trim();
+  if(!name){
+    nameEl.style.borderColor = "var(--rose)";
+    nameEl.focus();
+    nameEl.placeholder = lang === "ml" ? "പേര് നൽകുക" : "Please enter your name";
+    return;
+  }
+  nameEl.style.borderColor = "";
+  const count = document.getElementById("gcount").value;
+  const meal = document.getElementById("gmeal").value;
+  const msg =
+    "RSVP – Nimisha & Aromal Engagement\n" +
+    "Date: 5 July 2026, 4:00–8:00 PM\n" +
+    "Name: " + name + "\n" +
+    "Attendees: " + count + "\n" +
+    "Meal: " + meal;
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg), "_blank");
+});
 
-      <div class="photo-grid single-photo-grid" id="photoGrid">
-        <img src="assets/marked-photo.jpg" alt="Nimisha & Aromal engagement moment" />
-      </div>
-    </section>
-
-    <section class="rsvp section reveal" id="rsvp">
-      <p class="section-kicker" data-en="RSVP" data-ml="പങ്കെടുക്കൽ സ്ഥിരീകരിക്കുക">RSVP</p>
-      <h2 data-en="Confirm your presence" data-ml="നിങ്ങളുടെ സാന്നിധ്യം സ്ഥിരീകരിക്കുക">
-        Confirm your presence
-      </h2>
-
-      <form id="rsvpForm" class="rsvp-form">
-        <input name="name" placeholder="Guest name" required />
-        <input name="phone" placeholder="Phone / WhatsApp" required />
-
-        <select name="attendees" required>
-          <option value="">Number of attendees</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4+</option>
-        </select>
-
-        <select name="meal" required>
-          <option value="">Meal preference</option>
-          <option>Vegetarian</option>
-          <option>Non-Vegetarian</option>
-        </select>
-
-        <textarea name="message" placeholder="Blessing / message"></textarea>
-
-        <button class="btn primary" type="submit">Send RSVP on WhatsApp</button>
-      </form>
-    </section>
-
-    <section class="ai section reveal">
-      <p class="section-kicker">AI Touch</p>
-      <h2 id="quoteText">“May this beginning be wrapped in love, laughter and blessings.”</h2>
-      <button class="btn ghost" id="quoteBtn">Generate Engagement Quote</button>
-      <div class="guest-greeting" id="guestGreeting"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Nimisha & Aromal • 5 July 2026 • Idam Retreat</p>
-  </footer>
-
-  <script src="app.js"></script>
+/* language toggle EN / ML */
+const ML = {
+  welcome:"സ്വാഗതം", toour:"ഞങ്ങളുടെ നിശ്ചയത്തിലേക്ക്",
+  scroll:"വിവരങ്ങൾ താഴെ", counting:"ആ ശുഭമുഹൂർത്തത്തിലേക്ക്",
+  cdtitle:"മുഹൂർത്തത്തിലേക്ക് ഇനി", days:"ദിവസം", hours:"മണിക്കൂർ", mins:"മിനിറ്റ്", secs:"സെക്കൻഡ്",
+  journey:"ഒരു പുതിയ അധ്യായം", twohearts:"രണ്ട് ഹൃദയങ്ങൾ, ഒരു മനോഹര തുടക്കം",
+  inviteline:"ഇരു കുടുംബങ്ങളോടൊപ്പം, സ്നേഹത്തിന്റെയും അനുഗ്രഹത്തിന്റെയും ഈ ശുഭവേളയിലേക്ക് നിങ്ങളെ ഹാർദ്ദമായി ക്ഷണിക്കുന്നു.",
+  bride:"വധുവിന്റെ കുടുംബം", groom:"വരന്റെ കുടുംബം",
+  eventdet:"ചടങ്ങിന്റെ വിവരങ്ങൾ", ceremony:"നിശ്ചയ ചടങ്ങ്",
+  date:"തീയതി", sunday:"ഞായറാഴ്ച", muhurtham:"മുഹൂർത്തം", arrive:"ചടങ്ങ്: വൈകിട്ട് 4 മുതൽ 8 വരെ",
+  venue:"വേദി", maps:"ഗൂഗിൾ മാപ്പിൽ കാണുക",
+  venueshow:"വേദിയുടെ ദൃശ്യങ്ങൾ", venuetitle:"കേരളത്തിന്റെ ഹൃദ്യമായ ഒരു വേദി",
+  confirm:"സാന്നിധ്യം അറിയിക്കുക", yourname:"പേര്", attendees:"അതിഥികളുടെ എണ്ണം",
+  meal:"ഭക്ഷണം", veg:"സസ്യാഹാരം", nonveg:"മാംസാഹാരം", sendwa:"വാട്ട്സ്ആപ്പിൽ അറിയിക്കുക",
+  blessing:"സ്നേഹത്തോടെയും അനുഗ്രഹത്തോടെയും ഞങ്ങൾ നിങ്ങളെ കാത്തിരിക്കുന്നു"
+};
+const EN = {};
+document.querySelectorAll("[data-i18n]").forEach(el => EN[el.dataset.i18n] = el.textContent);
+document.querySelectorAll("[data-i18n-opt]").forEach(el => EN[el.dataset.i18nOpt] = el.textContent);
+let lang = "en";
+document.getElementById("langBtn").addEventListener("click", function(){
+  lang = lang === "en" ? "ml" : "en";
+  const dict = lang === "ml" ? ML : EN;
+  document.querySelectorAll("[data-i18n]").forEach(el => { if(dict[el.dataset.i18n]) el.textContent = dict[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-opt]").forEach(el => { if(dict[el.dataset.i18nOpt]) el.textContent = dict[el.dataset.i18nOpt]; });
+  this.textContent = lang === "ml" ? "English" : "മലയാളം";
+  document.documentElement.lang = lang;
+});
+</script>
 </body>
 </html>
