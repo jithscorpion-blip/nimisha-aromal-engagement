@@ -505,6 +505,11 @@ document.getElementById("musicBtn").addEventListener("click", function(){
   if(bgm.paused){ bgm.play().catch(()=>{}); this.textContent = "❚❚ Music"; }
   else { bgm.pause(); this.textContent = "♪ Music"; }
 });
+/* stop music when leaving the page or switching apps */
+function stopMusic(){ if(!bgm.paused){ bgm.pause(); document.getElementById("musicBtn").textContent = "♪ Music"; } }
+document.addEventListener("visibilitychange", () => { if(document.hidden) stopMusic(); });
+window.addEventListener("pagehide", stopMusic);
+window.addEventListener("blur", stopMusic);
 
 /* WhatsApp RSVP with validation */
 document.getElementById("waBtn").addEventListener("click", () => {
